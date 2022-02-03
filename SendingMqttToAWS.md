@@ -35,7 +35,7 @@ This tutorial will show you how to connect the Sterling EWB to an Access Point a
 
 Supply power to the development board via J24. Connect the TTL-232R-3V3 cable to J7 as shown below and then connect the other end of the cable to the your Windows PC. Then use Windows Device Manager determine the COM port for the TTL-232R-3V3. For this tutorial, we will use ***COM30***.
 
-   ![](/images/mqtt-aws/Setup.PNG)
+   ![](images/mqtt-aws/Setup.PNG)
 
 
 
@@ -45,17 +45,17 @@ Supply power to the development board via J24. Connect the TTL-232R-3V3 cable to
 
    - [ ] Navigate to ***Secure->Policies*** and then click ***Create a policy***.
 
-     ![CreatPolicy1-edit]( /images/mqtt-aws/CreatPolicy1-edit.PNG)
+     ![CreatPolicy1-edit]( images/mqtt-aws/CreatPolicy1-edit.PNG)
 
    
 
    - [ ] Create the policy as shown below. For ***Action*** enter ***iot: Connect, iot:Publish***.  For ***Resource ARN*** enter *****.  For ***Effect*** select ***Allow***. This policy will allow devices (e.g. Sterling EWB) to connect and publish MQTT messages.
 
-     ![CreatPolicy2-edit]( /images/mqtt-aws/CreatPolicy2-edit.PNG)	
+     ![CreatPolicy2-edit]( images/mqtt-aws/CreatPolicy2-edit.PNG)	
 
    - [ ] If the policy was created successfully, you should see the screen below.
 
-     ![CreatPolicy3-edit]( /images/mqtt-aws/CreatPolicy3-edit.PNG)
+     ![CreatPolicy3-edit]( images/mqtt-aws/CreatPolicy3-edit.PNG)
 
      
 
@@ -63,35 +63,35 @@ Supply power to the development board via J24. Connect the TTL-232R-3V3 cable to
 
    - [ ] Navigate to ***Manage->Things*** and then click ***Create things***.
 
-     ![]( /images/mqtt-aws/CreatThing1-edit.PNG)
+     ![]( images/mqtt-aws/CreatThing1-edit.PNG)
 
      
 
    - [ ] Select ***Create single thing*** and then click ***Next***.
 
-     ![]( /images/mqtt-aws/CreatThing2-edit.PNG)
+     ![]( images/mqtt-aws/CreatThing2-edit.PNG)
 
      
 
    - [ ] Name the ***Thing*** as ***MySensor*** and then click ***Next***.
 
-     ![CreatThing3-edit]( /images/mqtt-aws/CreatThing3-edit.PNG)	
+     ![CreatThing3-edit]( images/mqtt-aws/CreatThing3-edit.PNG)	
 
    - [ ] Select ***Auto-generate a certificate*** and then click ***Next***.
 
-     ![]( /images/mqtt-aws/CreatThing4-edit.png)
+     ![]( images/mqtt-aws/CreatThing4-edit.png)
 
      
 
    - [ ] Attach the policy that we created to ***MySensor*** by selecting ***MyPolicy*** and then click ***Create thing***.
 
-     ![CreatThing5-edit]( /images/mqtt-aws/CreatThing5-edit.PNG)
+     ![CreatThing5-edit]( images/mqtt-aws/CreatThing5-edit.PNG)
 
      
 
    - [ ] Download the ***MySensor*** certificate, public and private keys, and the ***Amazon Root CA certificates*** into the ***examples*** folder of the [Python Samples Apps](https://www.lairdconnect.com/documentation/command-set-python-sample-applications-sterling-ewb). Note, for this tutorial, we really just need the ***MySensor*** certificate and private keys, but you may download all the certificates and keys in case you need them in the future.
 
-     ![]( /images/mqtt-aws/CreatThing6-edit.png)
+     ![]( images/mqtt-aws/CreatThing6-edit.png)
 
      
 
@@ -101,7 +101,7 @@ Supply power to the development board via J24. Connect the TTL-232R-3V3 cable to
 
    - [ ] ***MySensor*** is now created as shown below. Next click ***MySensor***.
 
-     ![]( /images/mqtt-aws/CreatThing7-edit.png)
+     ![]( images/mqtt-aws/CreatThing7-edit.png)
 
      
 
@@ -109,13 +109,13 @@ Supply power to the development board via J24. Connect the TTL-232R-3V3 cable to
 
    - [ ] Select the ***Interact*** tab and then click ***View Settings***.
 
-     ![CopyHost1-edit]( /images/mqtt-aws/CopyHost2-edit.png)
+     ![CopyHost1-edit]( images/mqtt-aws/CopyHost2-edit.png)
 
      
 
    - [ ] Copy the endpoint url and save into a textfile. We will need this later when we run our Python sample scripts. It will be used as the hostname.
 
-     ![CopyHost3-edit]( /images/mqtt-aws/CopyHost3-edit.PNG)
+     ![CopyHost3-edit]( images/mqtt-aws/CopyHost3-edit.PNG)
 
    
 
@@ -123,7 +123,7 @@ Supply power to the development board via J24. Connect the TTL-232R-3V3 cable to
 
    Navigate to ***Test->MQTT test client***. Enter ***#*** on the ***Topic filter***.  Expand ***Additional configuration*** and select ***Display payload as strings***. Then click ***Subscribe***. ***#*** should be added to ***Subscriptions***.
    
-   ![TestMQTT]( /images/mqtt-aws/TestMQTT.png)
+   ![TestMQTT]( images/mqtt-aws/TestMQTT.png)
    
    
    
@@ -143,11 +143,11 @@ Supply power to the development board via J24. Connect the TTL-232R-3V3 cable to
 
      `mqtt.py -u COM30 -p 8883 --host TheEndPointURLYouCopiedFromStep3 --ssl NoVerifyHost --topic test/topic --body Hello`
 
-     ![CmdPrompt-Edit]( /images/mqtt-aws/CmdPrompt-Edit.PNG)
+     ![CmdPrompt-Edit]( images/mqtt-aws/CmdPrompt-Edit.PNG)
 
    - [ ] The hello message is received on the AWS MQTT Test Client.
 
-     ![]( /images/mqtt-aws/MsgReceived.PNG)
+     ![]( images/mqtt-aws/MsgReceived.PNG)
 
    
 

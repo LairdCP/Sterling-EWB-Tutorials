@@ -49,11 +49,11 @@ Below is an example of the hardware modification. With the switch set to ON it's
 
 Physical view of hardware modification:
 
-![EWB Hardware modification]( /images/program-wiced-windows/ewb_hardware_moda.png)
+![EWB Hardware modification]( images/program-wiced-windows/ewb_hardware_moda.png)
 
 Schematic view of hardware modification:
 
-![EWB Hardware modification schematic]( /images/program-wiced-windows/ewb_hardware_mod_scha.png)
+![EWB Hardware modification schematic]( images/program-wiced-windows/ewb_hardware_mod_scha.png)
 
 ### USB JTAG
 
@@ -63,13 +63,13 @@ The USB1 Debug/Program Interface is the default JTAG interface. Software can be 
 - Set SW7 to USB
 - If hardware modification is in place ensure switch is off (not connecting U8/14 to GND)
 
-![EWB USB JTAG]( /images/program-wiced-windows/ewb_usb_jtaga.png)
+![EWB USB JTAG]( images/program-wiced-windows/ewb_usb_jtaga.png)
 
 ### External JTAG
 
 The external JTAG (J10) can be used to program and debug with the hardware modification in place.
 
-![EWB External JTAG]( /images/program-wiced-windows/ewb_external_jtaga.png)
+![EWB External JTAG]( images/program-wiced-windows/ewb_external_jtaga.png)
 
 *Note using the external JTAG does disable the UART connection on the debug/programming USB1 connector. Please use UART1 (J12) for a serial interface for debugging. **Do not use both USB JTAG and external JTAG at the same time to prevent damage.**
 
@@ -88,11 +88,11 @@ The Sterling can be used either with AT Commands or Programmed with WICED. This 
 
 1. Install the IDE into a short path as this will prevent any pathing issues with folders with spaces in them.
 
-   ![WICED IDE Install Location]( /images/program-wiced-windows/wiced_ide_install_location.png)
+   ![WICED IDE Install Location]( images/program-wiced-windows/wiced_ide_install_location.png)
 
 2. Install the SDK into the same path for easy of use and to avoid any pathing issues with folders with spaces in them.
 
-   ![WICED SDK Install Location]( /images/program-wiced-windows/wiced_sdk_install_location.png)
+   ![WICED SDK Install Location]( images/program-wiced-windows/wiced_sdk_install_location.png)
 
 3. From here the install is straight forward, finish the install.
 
@@ -106,11 +106,11 @@ The Sterling can be used either with AT Commands or Programmed with WICED. This 
 
 5. The driver that WICED is using in this walk-thru is libusbk and can be installed using [Zadiag generic USB drivers](https://zadig.akeo.ie/). If Jlink drivers are installed then when in Zadiag set the following to install generic libusbk driver.
 
-   ![zadiag]( /images/program-wiced-windows/zadiag.png)
+   ![zadiag]( images/program-wiced-windows/zadiag.png)
 
     When using the Jlink Plus with the libusbk driver installed the device manager will look like:
 
-    ![device manager jlink]( /images/program-wiced-windows/device_manager_jlink.png)
+    ![device manager jlink]( images/program-wiced-windows/device_manager_jlink.png)
   
 6. Download the example demo at https://github.com/LairdCP/ewb_wiced_demo and extract the contents of "43xxx_Wi-Fi" folder to "C:\WICED-Studio-6.6\43xxx_Wi-Fi". This provides an example but also platform specific files.
 
@@ -118,7 +118,7 @@ The Sterling can be used either with AT Commands or Programmed with WICED. This 
 
 7. Now that platform specific files for the LAIRD_EWB are installed a make target can be created for the desired example. For example snip.apsta make targets would be:
 
-    ![make targets]( /images/program-wiced-windows/make_targets.png)
+    ![make targets]( images/program-wiced-windows/make_targets.png)
 
    1. USB JTAG make target will be:
 
@@ -143,7 +143,7 @@ The Sterling can be used either with AT Commands or Programmed with WICED. This 
 
   Firewall settings should look similar to:
 
-  ![OpenOCD Firewall Settings]( /images/program-wiced-windows/openocd_firewall.png)
+  ![OpenOCD Firewall Settings]( images/program-wiced-windows/openocd_firewall.png)
 
 ##### Manually running OpenOCD
 
@@ -153,23 +153,23 @@ The Sterling can be used either with AT Commands or Programmed with WICED. This 
 
   When switching projects or JTAG interfaces it's best practice to do a clean from the make target selection:
 
-  ![make clean]( /images/program-wiced-windows/make_clean.png)
+  ![make clean]( images/program-wiced-windows/make_clean.png)
 
 ##### openocd already running
 
   Occasionally a download will still fail and this could be due to openocd-all-brcm-libftdi.exe already running in the background. Check the Task Manager to ensure openocd-all-brcm-libftdi.exe isn't already running or running multiple times. Close any process of openocd-all-brcm-libftdi.exe and try downloading again.
 
-  ![Task Manager]( /images/program-wiced-windows/task_manager.png)
+  ![Task Manager]( images/program-wiced-windows/task_manager.png)
 
 #### Debugging
 
 Using the external JTAG the application is downloaded to target debugging can be started by:
 
-  ![start debug]( /images/program-wiced-windows/start_debug.png)
+  ![start debug]( images/program-wiced-windows/start_debug.png)
 
 Once in debugging and running, then add breakpoints. Below you can see a stop at breakpoint and variables values.
 
-  ![debugger stopped]( /images/program-wiced-windows/debugger_stopped.png)
+  ![debugger stopped]( images/program-wiced-windows/debugger_stopped.png)
 
 ## Additional Information and Support
 
