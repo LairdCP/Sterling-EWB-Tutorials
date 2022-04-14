@@ -4,6 +4,7 @@ title: "Programming with WICED on Windows"
 category: Sterling-EWB Tutorials
 order: 1
 product: Sterling-EWB
+technology: wifi
 description: "Application guides for programming the Sterling-EWB."
 status: publish
 ---
